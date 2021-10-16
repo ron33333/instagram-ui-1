@@ -17,11 +17,11 @@ export async function register(user)
 export async function checkAvailabilityEmail(email) {
     const res = await fetch(`${development.apiUrl}/user/get`)
     .then((res)=> res.json())
-    .then((users)=> {const isValid = users.find(user=>user.email === email);
+    .then((users)=> {
+        const isValid = users.find(user=>user.email === email);
         return isValid;
     })
     .catch(false);
-    return !res;
     
     // const arr = res.json();
     // let condition = true;
